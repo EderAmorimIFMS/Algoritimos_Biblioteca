@@ -1,10 +1,12 @@
+// Ao carregar a página, renderiza os livros existentes
+document.addEventListener('DOMContentLoaded', function() {
+    
 function baixarBiblioteca() {
     let biblioteca = localStorage.getItem("biblioteca");
     return biblioteca ? JSON.parse(biblioteca) : [];
 };
 
 let livros = baixarBiblioteca();
-
 
 function renderizar() {
     const container = document.getElementById("container");
@@ -126,7 +128,5 @@ document.getElementById("btn-remover").addEventListener("click", removerLivro);
 document.getElementById("btn-emprestar").addEventListener("click", emprestarLivro);
 document.getElementById("btn-devolver").addEventListener("click", devolverLivro);
 
-// Ao carregar a página, renderiza os livros existentes
-document.addEventListener('DOMContentLoaded', function() {
-    renderizar();
+renderizar();
 });
